@@ -1,0 +1,64 @@
+{
+  "name": "OpenEplatform.API",
+  "description": "Acitivites to both get instances/cases with different REST-calls and also set and add activities with SOAP-calls.",
+  "main": "Get Cases By FamilyID (Not Version Specific).xaml",
+  "dependencies": {
+    "UiPath.Credentials.Activities": "1.1.6479.13204",
+    "UiPath.System.Activities": "20.4.0",
+    "UiPath.UIAutomation.Activities": "20.4.3",
+    "UiPath.WebAPI.Activities": "1.4.5"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "19.10.4.0",
+  "projectVersion": "1.0.7",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": false
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Library",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": [
+        "Test/AddEventSOAP_Test.xaml",
+        "Test/AddInternalMessageSOAP_Test.xaml",
+        "Test/AddMessageSOAP_Test.xaml",
+        "Test/GetCasesREST_Test.xaml",
+        "Test/GetManagersSOAP_Test.xaml",
+        "Test/SetManagersSOAP_Test.xaml",
+        "Test/SetStatusSOAP_Test.xaml",
+        "Private/GetAppCredentials.xaml",
+        "Test/SetAttributeSOAP_Test.xaml",
+        "Test/GetCasesByAttribute_Test.xaml",
+        "Test/GetStatus_Test.xaml",
+        "Test/GetMessagesREST_Test.xaml",
+        "Test/GetColors_Test.xaml"
+      ]
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
+}

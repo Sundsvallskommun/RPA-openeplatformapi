@@ -1,0 +1,116 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Login_Test" this:Login_Test.in_Credential="Cred_NA_Skolskjutsbedömning_OeP" this:Login_Test.in_Url="https://e-tjanster.sundsvall.se/login2" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:sxl="clr-namespace:System.Xml.Linq;assembly=System.Xml.Linq" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Credential" Type="InArgument(x:String)" />
+    <x:Property Name="out_Username" Type="InArgument(x:String)" />
+    <x:Property Name="out_Password" Type="InArgument(ss:SecureString)" />
+    <x:Property Name="in_Url" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Login_Test.out_Username>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Login_Test.out_Username>
+  <this:Login_Test.out_Password>
+    <InArgument x:TypeArguments="ss:SecureString" />
+  </this:Login_Test.out_Password>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>396,366</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Login_Test" sap:VirtualizedContainerService.HintSize="376,306" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Result" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Result2" />
+      <Variable x:TypeArguments="x:Int32" Default="1625" Name="CaseID" />
+      <Variable x:TypeArguments="sxl:XDocument" Name="XMLDoc" />
+      <Variable x:TypeArguments="x:Boolean" Name="Success" />
+      <Variable x:TypeArguments="sd:DataTable" Name="XMLDataTable" />
+      <Variable x:TypeArguments="x:String" Default="RPA_008" Name="ManagerUserID" />
+      <Variable x:TypeArguments="x:String" Default="Kompletterad" Name="StatusAlias" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetAppCredentials workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Private\GetAppCredentials.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Username">[out_Username]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Credential">[in_Credential]</InArgument>
+        <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_Password">[out_Password]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get Managers workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Callback Integration\Add Event.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Int32" x:Key="CaseID">[CaseID]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="ExternalID" />
+        <InArgument x:TypeArguments="x:String" x:Key="ExternalIDSystem" />
+        <InArgument x:TypeArguments="s:DateTime" x:Key="TimeStamp">[now]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Message">["Startdatum för ändring: " + Now.ToString("yyyy-MM-dd") +". Detta sparas för att framställa anställningsavtal."]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="PrincipalName" />
+        <InArgument x:TypeArguments="x:String" x:Key="PrincipalUserID">RPA_008</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Username">[out_Username]</InArgument>
+        <InArgument x:TypeArguments="ss:SecureString" x:Key="Password">[out_Password]</InArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="Success">[Success]</OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="StatusCode" />
+        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="Headers" />
+        <OutArgument x:TypeArguments="x:Int32" x:Key="EventID" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="NumberOfTries">1</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="DomainURL">https://sundsvalltest.e-tjansteportalen.se/</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="RequestTimeout">15000</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+  </Sequence>
+</Activity>
